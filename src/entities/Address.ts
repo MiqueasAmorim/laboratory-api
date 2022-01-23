@@ -13,10 +13,10 @@ export class Address {
     street: string;
 
     @Column()
-    city: string;
+    neighborhood: string;
 
     @Column()
-    neighborhood: string;
+    city: string;    
 
     @Column()
     state: string;
