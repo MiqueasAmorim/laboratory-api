@@ -2,7 +2,7 @@ import { Column, Entity, JoinColumn, JoinTable, ManyToMany, OneToOne, PrimaryGen
 import { Address } from "./Address";
 import { Exam } from "./Exam";
 
-@Entity()
+@Entity({name: 'laboratories'})
 export class Laboratory {
     @PrimaryGeneratedColumn()
     id: number;
@@ -11,10 +11,12 @@ export class Laboratory {
     name: string;
 
     @OneToOne(() => Address)
-    @JoinColumn()
+    @JoinColumn({
+        name: 'address_id'
+    })
     address: Address
 
-    @Column()
+    @Column({name: 'is_active'})
     isActive: boolean;
     
     @ManyToMany(() => Exam)

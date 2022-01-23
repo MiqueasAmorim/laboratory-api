@@ -2,7 +2,7 @@ import { Column, Entity, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "t
 import { ExamTypeEnum } from "./enums/ExamTypeEnum";
 import { Laboratory } from "./Laboratory";
 
-@Entity()
+@Entity({name: 'exams'})
 export class Exam {
     @PrimaryGeneratedColumn()
     id: number;
