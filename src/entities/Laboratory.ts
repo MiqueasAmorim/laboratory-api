@@ -20,13 +20,4 @@ export class Laboratory {
     @ManyToMany(() => Exam)
     @JoinTable()
     exams: Exam[]
-
-    @Column()
-    createdAt: Date
-
-    @Column()
-    updatedAt: Date
-
-    @Column()
-    deletedAt: Date
 }

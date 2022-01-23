@@ -19,15 +19,6 @@ export class Exam {
     @Column()
     isActive: boolean
 
-    @Column()
-    createdAt: Date
-
-    @Column()
-    updatedAt: Date
-
-    @Column()
-    deletedAt: Date
-
     @ManyToMany(() => Laboratory)
     laboratories: Laboratory[]
 }

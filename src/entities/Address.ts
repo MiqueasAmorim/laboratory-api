@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Laboratory } from "./Laboratory";
 
-@Entity()
+@Entity({ name: 'addresses' })
 export class Address {
     @PrimaryGeneratedColumn()
     id: number;
@@ -16,7 +16,7 @@ export class Address {
     neighborhood: string;
 
     @Column()
-    city: string;    
+    city: string;
 
     @Column()
     state: string;
@@ -24,20 +24,13 @@ export class Address {
     @Column()
     country: string;
 
-    @Column()
+    @Column({
+        name: 'zip_code'
+    })
     zipCode: number;
 
     @Column()
     complement: string;
-
-    @Column()
-    createdAt: Date
-
-    @Column()
-    updatedAt: Date
-
-    @Column()
-    deletedAt: Date
 
     @OneToOne(() => Laboratory)
     laboratory: Laboratory
