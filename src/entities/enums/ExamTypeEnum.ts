@@ -1,4 +1,4 @@
 export enum ExamTypeEnum {
-    ClinicalAnalysis = 'CLINICAL_ANALYSIS',
-    Image = 'IMAGE'
+    ClinicalAnalysis = 'clinical_analysis',
+    Image = 'image'
 }
