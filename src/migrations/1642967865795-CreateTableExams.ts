@@ -9,7 +9,8 @@ export class CreateTableExams1642967865795 implements MigrationInterface {
                 {
                     name: 'id',
                     type: 'int',
-                    isPrimary: true
+                    isPrimary: true,
+                    isGenerated: true
                 },
                 {
                     name: 'name',
@@ -23,7 +24,8 @@ export class CreateTableExams1642967865795 implements MigrationInterface {
                 },
                 {
                     name: 'is_active',
-                    type: 'boolean'
+                    type: 'boolean',
+                    default: true
                 },
                 {
                     name: 'created_at',
@@ -38,7 +40,7 @@ export class CreateTableExams1642967865795 implements MigrationInterface {
                 {
                     name: 'deleted_at',
                     type: 'timestamp',
-                    default: 'now()'
+                    isNullable: true
                 }
             ]
         }), true);

@@ -9,7 +9,8 @@ export class CreateTableLaboratory1642966626832 implements MigrationInterface {
                 {
                     name: 'id',
                     type: 'int',
-                    isPrimary: true
+                    isPrimary: true,
+                    isGenerated: true
                 },
                 {
                     name: 'name',
@@ -17,7 +18,8 @@ export class CreateTableLaboratory1642966626832 implements MigrationInterface {
                 },
                 {
                     name: 'is_active',
-                    type: 'boolean'
+                    type: 'boolean',
+                    default: true
                 },
                 {
                     name: 'address_id',
@@ -36,7 +38,7 @@ export class CreateTableLaboratory1642966626832 implements MigrationInterface {
                 {
                     name: 'deleted_at',
                     type: 'timestamp',
-                    default: 'now()'
+                    isNullable: true
                 }
             ],
             foreignKeys: [

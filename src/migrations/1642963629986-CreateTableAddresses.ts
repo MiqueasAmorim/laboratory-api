@@ -9,7 +9,8 @@ export class CreateTableAddress1642963629986 implements MigrationInterface {
                 {
                     name: 'id',
                     type: 'int',
-                    isPrimary: true
+                    isPrimary: true,
+                    isGenerated: true
                 },
                 {
                     name: 'number',
@@ -24,12 +25,17 @@ export class CreateTableAddress1642963629986 implements MigrationInterface {
                     type: 'varchar'
                 },
                 {
+                    name: 'city',
+                    type: 'varchar'
+                },
+                {
                     name: 'state',
                     type: 'varchar'
                 },
                 {
                     name: 'country',
-                    type: 'varchar'
+                    type: 'varchar',
+                    default: `'Brasil'`,
                 },
                 {
                     name: 'zip_code',
@@ -53,14 +59,14 @@ export class CreateTableAddress1642963629986 implements MigrationInterface {
                 {
                     name: 'deleted_at',
                     type: 'timestamp',
-                    default: 'now()'
+                    isNullable: true
                 }
             ]
         }), true);
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await  queryRunner.dropTable('address', true, true, true)
+        await  queryRunner.dropTable('addresses', true, true, true)
     }
 
 }

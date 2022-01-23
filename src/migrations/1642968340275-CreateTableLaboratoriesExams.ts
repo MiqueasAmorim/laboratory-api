@@ -9,7 +9,8 @@ export class CreateTableLaboratoriesExams1642968340275 implements MigrationInter
                 {
                     name: 'laboratory_id',
                     type: 'integer',
-                    isPrimary: true
+                    isPrimary: true,
+                    isGenerated: true
                 },
                 {
                     name: 'exam_id',
@@ -29,7 +30,7 @@ export class CreateTableLaboratoriesExams1642968340275 implements MigrationInter
                 {
                     name: 'deleted_at',
                     type: 'timestamp',
-                    default: 'now()'
+                    isNullable: true
                 }
             ],
             foreignKeys: [
