@@ -9,13 +9,19 @@ export class TypeORMLaboratoryRepository implements ILaboratoryRepository {
         return laboratoryRepository.save(saveLaboratoryDTO);
     }
 
+    async findById(id: number): Promise<Laboratory> {
+        const laboratoryRepository = getRepository(Laboratory);
+        return laboratoryRepository.findOne({ where: { id }, relations: ['address'] });
+    }
+
     async findByActive(isActive: boolean): Promise<Laboratory[]> {
         const laboratoryRepository = getRepository(Laboratory);
-        return laboratoryRepository.find({ where: {isActive}, relations: ['address'] });
+        return laboratoryRepository.find({ where: { isActive }, relations: ['address'] });
     }
 
     async update(laboratory: Laboratory): Promise<void> {
-        throw new Error("Method not implemented.");
+        const laboratoryRepository = getRepository(Laboratory);
+        await laboratoryRepository.update(laboratory.id, { ...laboratory });
     }
 
     async delete(laboratory: Laboratory): Promise<void> {
