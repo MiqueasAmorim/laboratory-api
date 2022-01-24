@@ -1,6 +1,7 @@
 import { Request, Response, Router } from 'express';
 import { body } from 'express-validator';
 import { createLaboratoryController } from '../usecases/create-laboratory';
+import { listLaboratoriesController } from '../usecases/list-laboratories';
 import { checkValidationResult } from './utils/checkValidationResult';
 
 const laboratoryRouter = Router();
@@ -34,6 +35,14 @@ laboratoryRouter.post(
     checkValidationResult,
     (req: Request, res: Response) => {
         return createLaboratoryController.handle(req, res);
+    });
+
+laboratoryRouter.get(
+    '/laboratories',
+    body('is_active').isBoolean().withMessage("is_active must be a boolean"),
+    checkValidationResult,
+    (req: Request, res: Response) => {
+        return listLaboratoriesController.handle(req, res);
     });
 
 export { laboratoryRouter }

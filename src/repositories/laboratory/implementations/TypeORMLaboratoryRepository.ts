@@ -6,17 +6,18 @@ import { ILaboratoryRepository } from "../ILaboratoryRepository";
 export class TypeORMLaboratoryRepository implements ILaboratoryRepository {
     async save(saveLaboratoryDTO: ISaveLaboratoryDTO): Promise<Laboratory> {
         const laboratoryRepository = getRepository(Laboratory);
-        return await laboratoryRepository.save(saveLaboratoryDTO);
+        return laboratoryRepository.save(saveLaboratoryDTO);
     }
 
-    async findAllByActive(): Promise<Laboratory[]> {
-        throw new Error("Method not implemented.");
+    async findByActive(isActive: boolean): Promise<Laboratory[]> {
+        const laboratoryRepository = getRepository(Laboratory);
+        return laboratoryRepository.find({ where: {isActive}, relations: ['address'] });
     }
 
     async update(laboratory: Laboratory): Promise<void> {
         throw new Error("Method not implemented.");
     }
-    
+
     async delete(laboratory: Laboratory): Promise<void> {
         throw new Error("Method not implemented.");
     }

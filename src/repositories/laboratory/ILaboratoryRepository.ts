@@ -3,7 +3,7 @@ import { ISaveLaboratoryDTO } from "../../usecases/create-laboratory/ISaveLabora
 
 export interface ILaboratoryRepository {
     save(saveLaboratoryDTO: ISaveLaboratoryDTO): Promise<Laboratory>;
-    findAllByActive(): Promise<Laboratory[]>;
+    findByActive(isActive: boolean): Promise<Laboratory[]>;
     update(laboratory: Laboratory): Promise<void>;
     delete(laboratory: Laboratory): Promise<void>;
 }
