@@ -1,5 +1,5 @@
-import { IAddressRepository } from "../../repositories/address/IAddressRepository";
-import { ILaboratoryRepository } from "../../repositories/laboratory/ILaboratoryRepository";
+import { IAddressRepository } from "../../../repositories/address/IAddressRepository";
+import { ILaboratoryRepository } from "../../../repositories/laboratory/ILaboratoryRepository";
 import { ICreateLaboratoryDTO } from "./ICreateLaboratoryDTO";
 
 export class CreateLaboratoryUseCase {

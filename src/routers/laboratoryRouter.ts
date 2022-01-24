@@ -1,9 +1,9 @@
 import { Request, Response, Router } from 'express';
 import { body, param } from 'express-validator';
-import { createLaboratoryController } from '../usecases/create-laboratory';
-import { deleteLaboratoryController } from '../usecases/delete-laboratory';
-import { listLaboratoriesController } from '../usecases/list-laboratories';
-import { updateLaboratoryController } from '../usecases/update-laboratory';
+import { createLaboratoryController } from '../usecases/laboratory/create-laboratory';
+import { deleteLaboratoryController } from '../usecases/laboratory/delete-laboratory';
+import { listLaboratoriesController } from '../usecases/laboratory/list-laboratories';
+import { updateLaboratoryController } from '../usecases/laboratory/update-laboratory';
 import { checkValidationResult } from './utils/checkValidationResult';
 
 const laboratoryRouter = Router();

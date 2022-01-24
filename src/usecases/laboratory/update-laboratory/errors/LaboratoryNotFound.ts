@@ -1,4 +1,4 @@
-import { NotFoundError } from "../../../errors/NotFoundError";
+import { NotFoundError } from "../../../../errors/NotFoundError";
 
 export class LaboratoryNotFound extends NotFoundError {
     constructor() {

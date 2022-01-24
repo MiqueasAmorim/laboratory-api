@@ -1,4 +1,4 @@
-import { TypeORMLaboratoryRepository } from "../../repositories/laboratory/implementations/TypeORMLaboratoryRepository";
+import { TypeORMLaboratoryRepository } from "../../../repositories/laboratory/implementations/TypeORMLaboratoryRepository";
 import { UpdateLaboratoryController } from "./UpdateLaboratoryController";
 import { UpdateLaboratoryUseCase } from "./UpdateLaboratoryUseCase";
 

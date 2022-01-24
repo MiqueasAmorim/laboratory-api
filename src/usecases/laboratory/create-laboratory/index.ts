@@ -1,5 +1,5 @@
-import { TypeORMAddressRepository } from "../../repositories/address/implementations/TypeORMAddressRepository";
-import { TypeORMLaboratoryRepository } from "../../repositories/laboratory/implementations/TypeORMLaboratoryRepository";
+import { TypeORMAddressRepository } from "../../../repositories/address/implementations/TypeORMAddressRepository";
+import { TypeORMLaboratoryRepository } from "../../../repositories/laboratory/implementations/TypeORMLaboratoryRepository";
 import { CreateLaboratoryController } from "./CreateLaboratorayController";
 import { CreateLaboratoryUseCase } from "./CreateLaboratoryUseCase";
 

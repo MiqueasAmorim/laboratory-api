@@ -1,6 +1,6 @@
 import { getRepository } from "typeorm";
 import { Laboratory } from "../../../entities/Laboratory";
-import { ISaveLaboratoryDTO } from "../../../usecases/create-laboratory/ISaveLaboratoryDTO";
+import { ISaveLaboratoryDTO } from "../../../usecases/laboratory/create-laboratory/ISaveLaboratoryDTO";
 import { ILaboratoryRepository } from "../ILaboratoryRepository";
 
 export class TypeORMLaboratoryRepository implements ILaboratoryRepository {

@@ -1,6 +1,6 @@
 import { Laboratory } from "../../entities/Laboratory";
-import { ISaveLaboratoryDTO } from "../../usecases/create-laboratory/ISaveLaboratoryDTO";
-import { IUpdateLaboratoryDTO } from "../../usecases/update-laboratory/IUpdateLaboratoryDTO";
+import { ISaveLaboratoryDTO } from "../../usecases/laboratory/create-laboratory/ISaveLaboratoryDTO";
+import { IUpdateLaboratoryDTO } from "../../usecases/laboratory/update-laboratory/IUpdateLaboratoryDTO";
 
 export interface ILaboratoryRepository {
     save(saveLaboratoryDTO: ISaveLaboratoryDTO): Promise<Laboratory>;

@@ -1,4 +1,4 @@
-import { ILaboratoryRepository } from "../../repositories/laboratory/ILaboratoryRepository";
+import { ILaboratoryRepository } from "../../../repositories/laboratory/ILaboratoryRepository";
 
 export class ListLaboratoriesUseCase {
     constructor(

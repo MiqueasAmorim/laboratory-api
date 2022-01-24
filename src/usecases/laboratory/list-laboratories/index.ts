@@ -1,4 +1,4 @@
-import { TypeORMLaboratoryRepository } from "../../repositories/laboratory/implementations/TypeORMLaboratoryRepository";
+import { TypeORMLaboratoryRepository } from "../../../repositories/laboratory/implementations/TypeORMLaboratoryRepository";
 import { ListLaboratoryController } from "./ListLaboratoriesController";
 import { ListLaboratoriesUseCase } from "./ListLaboratoriesUseCase";
 

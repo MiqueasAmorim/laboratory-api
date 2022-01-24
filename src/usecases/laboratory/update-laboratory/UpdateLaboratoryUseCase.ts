@@ -1,4 +1,4 @@
-import { ILaboratoryRepository } from "../../repositories/laboratory/ILaboratoryRepository";
+import { ILaboratoryRepository } from "../../../repositories/laboratory/ILaboratoryRepository";
 import { LaboratoryNotFound } from "./errors/LaboratoryNotFound";
 import { IUpdateLaboratoryDTO } from "./IUpdateLaboratoryDTO";
 

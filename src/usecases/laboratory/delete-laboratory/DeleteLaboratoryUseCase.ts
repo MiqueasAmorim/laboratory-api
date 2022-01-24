@@ -1,4 +1,4 @@
-import { ILaboratoryRepository } from "../../repositories/laboratory/ILaboratoryRepository";
+import { ILaboratoryRepository } from "../../../repositories/laboratory/ILaboratoryRepository";
 import { LaboratoryNotFound } from "../update-laboratory/errors/LaboratoryNotFound";
 
 export class DeleteLaboratoryUseCase {
