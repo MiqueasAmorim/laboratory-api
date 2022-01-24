@@ -25,6 +25,7 @@ export class TypeORMLaboratoryRepository implements ILaboratoryRepository {
     }
 
     async delete(laboratory: Laboratory): Promise<void> {
-        throw new Error("Method not implemented.");
+        const laboratoryRepository = getRepository(Laboratory);
+        await laboratoryRepository.delete(laboratory);
     }
 }

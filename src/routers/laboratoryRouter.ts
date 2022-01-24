@@ -1,6 +1,7 @@
 import { Request, Response, Router } from 'express';
 import { body, param } from 'express-validator';
 import { createLaboratoryController } from '../usecases/create-laboratory';
+import { deleteLaboratoryController } from '../usecases/delete-laboratory';
 import { listLaboratoriesController } from '../usecases/list-laboratories';
 import { updateLaboratoryController } from '../usecases/update-laboratory';
 import { checkValidationResult } from './utils/checkValidationResult';
@@ -71,5 +72,14 @@ laboratoryRouter.put(
     (req: Request, res: Response) => {
         return updateLaboratoryController.handle(req, res);
     });
+
+laboratoryRouter.delete(
+    '/laboratories/:id',
+    param('id').isInt({ min: 1 }).withMessage("id must be a integer greater than zero"),
+    checkValidationResult,
+    (req: Request, res: Response) => {
+        return deleteLaboratoryController.handle(req, res);
+    });
+
 
 export { laboratoryRouter }
