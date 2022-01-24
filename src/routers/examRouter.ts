@@ -2,6 +2,7 @@ import { Request, Response, Router } from 'express';
 import { body } from 'express-validator';
 import { ExamTypeEnum } from '../entities/enums/ExamTypeEnum';
 import { createExamController } from '../usecases/exam/create-exam';
+import { listExamsController } from '../usecases/exam/list-exams';
 import { checkValidationResult } from "./utils/checkValidationResult";
 
 const examRouter = Router();
@@ -29,6 +30,14 @@ examRouter.post(
     checkValidationResult,
     (req: Request, res: Response) => {
         return createExamController.handle(req, res);
+    });
+
+examRouter.get(
+    '/exams',
+    body('is_active').isBoolean().withMessage("is_active must be a boolean"),
+    checkValidationResult,
+    (req: Request, res: Response) => {
+        return listExamsController.handle(req, res);
     });
 
 export { examRouter }
