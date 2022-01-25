@@ -26,7 +26,8 @@ export class TypeORMExamRepository implements IExamRepository {
         await examRepository.update(examDTO.id, {...examDTO});
     }
 
-    delete(exam: Exam): Promise<void> {
-        throw new Error("Method not implemented.");
+    async delete(exam: Exam): Promise<void> {
+        const examRepository = getRepository(Exam);
+        await examRepository.delete(exam);
     }
 }
