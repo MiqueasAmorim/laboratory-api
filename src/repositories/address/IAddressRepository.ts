@@ -1,5 +1,5 @@
 import { Address } from "../../entities/Address";
-import { ICreateAddressDTO } from "../../usecases/ICreateAddressDTO";
+import { ICreateAddressDTO } from "../../usecases/laboratory/ICreateAddressDTO";
 
 export interface IAddressRepository {
     save(createAddressDTO: ICreateAddressDTO): Promise<Address>;

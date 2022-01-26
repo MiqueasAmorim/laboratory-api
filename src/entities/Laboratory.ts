@@ -19,7 +19,7 @@ export class Laboratory {
     @Column({name: 'is_active'})
     isActive: boolean;
     
-    @ManyToMany(() => Exam)
-    @JoinTable()
-    exams: Exam[]
+    // @ManyToMany(() => Exam)
+    // @JoinTable()
+    // exams: Exam[]
 }

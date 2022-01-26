@@ -1,6 +1,6 @@
 import { getRepository } from "typeorm";
 import { Address } from "../../../entities/Address";
-import { ICreateAddressDTO } from "../../../usecases/ICreateAddressDTO";
+import { ICreateAddressDTO } from "../../../usecases/laboratory/ICreateAddressDTO";
 import { IAddressRepository } from "../IAddressRepository";
 
 export class TypeORMAddressRepository implements IAddressRepository {

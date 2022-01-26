@@ -12,7 +12,7 @@ export class TypeORMExamRepository implements IExamRepository {
 
     async findById(id: number): Promise<Exam> {
         const examRepository = getRepository(Exam);
-        return examRepository.findOne(id);
+        return examRepository.findOne({ where: { id } });
     }
 
     async findByActive(isActive: boolean): Promise<Exam[]> {
@@ -20,10 +20,10 @@ export class TypeORMExamRepository implements IExamRepository {
         return examRepository.find({ where: { isActive } });
     }
 
-    
+
     async update(examDTO: IUpdateExamDTO): Promise<void> {
         const examRepository = getRepository(Exam);
-        await examRepository.update(examDTO.id, {...examDTO});
+        await examRepository.update(examDTO.id, { ...examDTO });
     }
 
     async delete(exam: Exam): Promise<void> {
