@@ -7,4 +7,5 @@ export interface ILaboratoryExamRepository {
     findAssociation(laboratory: Laboratory, exam: Exam): Promise<LaboratoryExam>;
     findAssociatedExams(laboratoryId: number): Promise<Exam[]>;
     findAssociatedLaboratories(examId: number): Promise<Laboratory[]>
+    deleteAssociation(laboratoryExam: LaboratoryExam): Promise<void>;
 }

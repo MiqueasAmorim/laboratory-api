@@ -39,4 +39,8 @@ export class TypeORMLaboratoryExamRepository implements ILaboratoryExamRepositor
         return laboratoryExamList.map(labExam => labExam.laboratory);
     }
 
+    async deleteAssociation(laboratoryExam: LaboratoryExam): Promise<void> {
+        const laboratoryExamRepository = getRepository(LaboratoryExam);
+        await laboratoryExamRepository.delete(laboratoryExam);
+    }
 }

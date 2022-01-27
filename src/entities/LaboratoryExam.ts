@@ -1,4 +1,4 @@
-import { Entity, JoinColumn, JoinTable, OneToOne, PrimaryColumn } from "typeorm";
+import { Entity, JoinColumn, OneToOne, PrimaryColumn } from "typeorm";
 import { Exam } from "./Exam";
 import { Laboratory } from "./Laboratory";
 

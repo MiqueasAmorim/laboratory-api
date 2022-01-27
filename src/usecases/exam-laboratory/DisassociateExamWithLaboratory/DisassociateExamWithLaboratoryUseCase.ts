@@ -3,11 +3,9 @@ import { ILaboratoryRepository } from "../../../repositories/laboratory/ILaborat
 import { ILaboratoryExamRepository } from "../../../repositories/laboratoryExam/ILaboratoryExamRepository";
 import { ExamNotFound } from "../../exam/errors/ExamNotFound";
 import { LaboratoryNotFound } from "../../laboratory/update-laboratory/errors/LaboratoryNotFound";
-import { AssociationLaboratoryExamAlreadyExistsError } from "../errors/AssociationLaboratoryExamAlreadyExistsError";
-import { ExamNotActiveError } from "../errors/ExamNotActiveError";
-import { LaboratoryNotActiveError } from "../errors/LaboratoryNotActiveError";
+import { AssociationLaboratoryExamNotFound } from "../errors/AssociationLaboratoryExamNotFoundError";
 
-export class AssociateExamWithLaboratoryUseCase {
+export class DisassociateExamWithLaboratoryUseCase {
     constructor(
         private examRepository: IExamRepository,
         private laboratoryRepository: ILaboratoryRepository,
@@ -21,26 +19,18 @@ export class AssociateExamWithLaboratoryUseCase {
             throw new ExamNotFound();
         }
 
-        if (!exam.isActive) {
-            throw new ExamNotActiveError()
-        }
-
         const laboratory = await this.laboratoryRepository.findById(laboratoryId);
 
         if (!laboratory) {
             throw new LaboratoryNotFound();
         }
 
-        if (!laboratory.isActive) {
-            throw new LaboratoryNotActiveError();
-        }
-
         const laboratoryExam = await this.laboratoryExamRepository.findAssociation(laboratory, exam);
 
-        if (laboratoryExam) {
-            throw new AssociationLaboratoryExamAlreadyExistsError();
+        if (!laboratoryExam) {
+            throw new AssociationLaboratoryExamNotFound();
         }
 
-        await this.laboratoryExamRepository.saveAssociation(laboratory, exam);
+        await this.laboratoryExamRepository.deleteAssociation(laboratoryExam);
     }
 }
