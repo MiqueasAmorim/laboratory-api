@@ -10,7 +10,7 @@ const configsPROD = {
    "entities": [join(__dirname, '**', 'entities/*.js')],
    "migrations": [join(__dirname, '**', 'migrations/*.js')],
    "ssl": {
-      rejectUnauthorized: true
+      rejectUnauthorized: false
    }
 }
 
