@@ -2,17 +2,24 @@ const { join } = require('path');
 
 const configsDEV = {
    "entities": [join(__dirname, '**', 'entities/*.ts')],
-   "migrations": [join(__dirname, '**', 'migrations/*.ts')]
+   "migrations": [join(__dirname, '**', 'migrations/*.ts')],
+   "ssl": null
 }
 
 const configsPROD = {
    "entities": [join(__dirname, '**', 'entities/*.js')],
-   "migrations": [join(__dirname, '**', 'migrations/*.js')]
+   "migrations": [join(__dirname, '**', 'migrations/*.js')],
+   "ssl": {
+      rejectUnauthorized: true
+   }
 }
 
 const configs = {
    "type": "postgres",
    "url": process.env.DATABASE_URL,
+   "ssl": process.env.NODE_ENV === 'DEV'
+      ? configsDEV.ssl
+      : configsPROD.ssl,
    "entities": process.env.NODE_ENV === 'DEV'
       ? configsDEV.entities
       : configsPROD.entities,
