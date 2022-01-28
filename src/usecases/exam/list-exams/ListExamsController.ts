@@ -23,7 +23,7 @@ export class ListExamsController {
                 exams
             });
         } catch (err) {
-            return response.status(400).json({
+            return response.status(err.HTTPErrorCode || 500).json({
                 message: err.message || 'Unexpected error.'
             });
         }

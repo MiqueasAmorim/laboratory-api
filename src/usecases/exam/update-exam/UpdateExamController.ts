@@ -22,7 +22,7 @@ export class UpdateExamController {
                 message: 'Exam updated successfully',
             });
         } catch (err) {
-            return response.status(err.HTTPErrorCode || 400).json({
+            return response.status(err.HTTPErrorCode || 500).json({
                 message: err.message || 'Unexpected error.'
             });
         }
