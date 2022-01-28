@@ -4,15 +4,15 @@ API para manutenção de laboratórios e exames
 ## Funcionalidades
 
 ### Exame
-* Cria um exame
-* Atualiza um exame
-* Lista os exames
-* Exclui um exame 
+* Cadastra um novo exame
+* Atualiza um exame existente
+* Lista os exames (ativos ou inativos)
+* Exclui um exame
 
 ### Laboratório
-* Cria um laboratório
-* Atualiza um laboratório
-* Lista os laboratóios
+* Cadastra um novo laboratório
+* Atualiza um laboratório existente
+* Lista os laboratóios (ativos ou inativos)
 * Exclui um laboratório
 
 ### Associação entre exame e laboratório
